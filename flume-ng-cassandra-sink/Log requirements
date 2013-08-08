@@ -1,0 +1,54 @@
+Log requirements:
+
+Tenant wide logs and tenant wide events tables defined below store information generated from various components within the NVP. The various logs and events captured in these tables depend on what are defined in Controller applications, OpenvSwitch and OpenFlow Controller. Some of the logs and events captured :- 
+1. Logs and events related to VMs - creation, deletion and migration timestamps; failure logs for all above operations on VMs
+ 2. Logs and events related to networking on VMs - attachment of i/fs to quantum ports and ports on vswitches.
+ 3. Logs and errors on user creation, deletion, authorization and authentication related events, statistics collected per user etc.
+ 4. Logs and errors indicating configuration successes / failures, provisioning successes / failures, status of other admin initiated actions - both cloud admin and tenant admin.
+ 5. Logs and errors for Quantum network, port and interface related actions.
+ 6. Logs for tunnel creation and deletion successes / failures, actions taken for VM migration.
+ 7. Logs related to flow miss and flow deleted handling in applications.
+ 8. OpenvSwitch or other vSwitch related logs from each compute node - related to datapath & port creation, deletion and updates; flow related information for flow addition / deletion / modification / timeouts; state change of ports and datapaths.
+ 9. If there are agents running on top of switches, the logs from agents related to vSwitch management and programming.
+ 10. OpenFlow controller logs and events - logical switch creation / deletion / modification; flow addition / deletion / modification triggered by the controller and conditions leading to those actions; port related actions taken by the controller; port capabilities, status and statistics collected by the controller for each logical switch; features / capabilities supported by each logical switch etc.
+11. Logs related to policies configured on DVS ports and interfaces.
+12. ACL rules configured on ports of various vswitches and packet statistics indicating how many and what packets matched the deny / drop rules and how many packets are forwarded.
+13. QoS based logs & statistics from ports of various vSwitches and their queues.
+
+
+Tenant Wide Logs column family definition:
+
+Column Name		Key		Description
+----------------------------------------------------------------------------------
+Network-id 		Secondary	Generated UUID for Quantum network
+Name			Secondary	String identifying a s/w component
+Timestamp		Primary		Time of generation of log message
+Severity			Secondary	Severity of the log message
+Message			Fixed length, free format log message
+
+Tenant Wide NetFlow/sflow Records column family:
+
+Column Name		Key		Description
+----------------------------------------------------------------------------------------
+Network-id 		Secondary	Generated UUID for Quantum network
+vSwitch IP				vSwitch sending the netflow/sflow records
+OVS Port				Port on vSwitch configured for netflow/sflow
+Port-id					Generated UUID for Quantum Port
+Netflow/sflow data			Netflow / sflow record sent by vSwitch
+Timestamp		Primary		Time of capture of packet
+
+
+
+
+APIs provided by our product to network management and monitoring applications which use these to build a management UI for tenant networks:
+
+1. retrieving all logs of a given severity within a tenant network or across all tenants
+
+2. retrieving all logs of a given component within a tenant network or across all tenants
+
+3. retrieving logs within a given time duration for a specific tenant or for all tenants
+
+4. displaying the records obtained using sFlow / netFlow on a given port of a tenant network
+
+5. events / SNMP traps coming from a specific VM or vSwitch  or interface etc.
+

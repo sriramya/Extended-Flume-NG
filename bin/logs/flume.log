@@ -1,0 +1,573 @@
+22 Feb 2013 09:07:26,688 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.node.PollingPropertiesFileConfigurationProvider.start:61)  - Configuration provider starting
+22 Feb 2013 09:07:26,696 INFO  [conf-file-poller-0] (org.apache.flume.node.PollingPropertiesFileConfigurationProvider$FileWatcherRunnable.run:133)  - Reloading configuration file:../conf/syslogtcp.conf
+22 Feb 2013 09:07:26,703 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:930)  - Added sinks: cassandraSink Agent: agent
+22 Feb 2013 09:07:26,704 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1016)  - Processing:cassandraSink
+22 Feb 2013 09:07:26,704 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1016)  - Processing:cassandraSink
+22 Feb 2013 09:07:26,704 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1016)  - Processing:cassandraSink
+22 Feb 2013 09:07:26,715 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration.validateConfiguration:140)  - Post-validation flume configuration contains configuration for agents: [agent]
+22 Feb 2013 09:07:26,716 INFO  [conf-file-poller-0] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:150)  - Creating channels
+22 Feb 2013 09:07:26,722 INFO  [conf-file-poller-0] (org.apache.flume.channel.DefaultChannelFactory.create:40)  - Creating instance of channel memoryChannel type memory
+22 Feb 2013 09:07:26,733 INFO  [conf-file-poller-0] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:205)  - Created channel memoryChannel
+22 Feb 2013 09:07:26,734 INFO  [conf-file-poller-0] (org.apache.flume.source.DefaultSourceFactory.create:39)  - Creating instance of source seqGenSrc, type org.apache.flume.source.SyslogTcpSource
+22 Feb 2013 09:07:26,770 INFO  [conf-file-poller-0] (org.apache.flume.interceptor.StaticInterceptor$Builder.build:133)  - Creating StaticInterceptor: preserveExisting=true,key=key,value=key
+22 Feb 2013 09:07:26,793 INFO  [conf-file-poller-0] (org.apache.flume.sink.DefaultSinkFactory.create:40)  - Creating instance of sink: cassandraSink, type: com.btoddb.flume.sinks.cassandra.CassandraSink
+22 Feb 2013 09:07:26,894 INFO  [conf-file-poller-0] (org.apache.flume.node.AbstractConfigurationProvider.getConfiguration:119)  - Channel memoryChannel connected to [seqGenSrc, cassandraSink]
+22 Feb 2013 09:07:26,897 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:138)  - Starting new configuration:{ sourceRunners:{seqGenSrc=EventDrivenSourceRunner: { source:org.apache.flume.source.SyslogTcpSource{name:seqGenSrc,state:IDLE} }} sinkRunners:{cassandraSink=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@6f9b8e counterGroup:{ name:null counters:{} } }} channels:{memoryChannel=org.apache.flume.channel.MemoryChannel{name: memoryChannel}} }
+22 Feb 2013 09:07:26,897 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:145)  - Starting Channel memoryChannel
+22 Feb 2013 09:07:26,900 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:89)  - Monitoried counter group for type: CHANNEL, name: memoryChannel, registered successfully.
+22 Feb 2013 09:07:26,913 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:73)  - Component type: CHANNEL, name: memoryChannel started
+22 Feb 2013 09:07:26,913 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:173)  - Starting Sink cassandraSink
+22 Feb 2013 09:07:26,914 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:184)  - Starting Source seqGenSrc
+22 Feb 2013 09:07:27,122 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.<init>:48)  - Downed Host Retry service started with queue size -1 and retry delay 10s
+22 Feb 2013 09:07:27,129 INFO  [lifecycleSupervisor-1-2] (org.apache.flume.source.SyslogTcpSource.start:112)  - Syslog TCP Source starting...
+22 Feb 2013 09:07:27,129 INFO  [lifecycleSupervisor-1-2] (org.apache.flume.source.SyslogTcpSource.start:113)  - 1234567hello worldklshfklashfkahfkhafkh
+
+22 Feb 2013 09:07:27,135 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.service.JmxMonitor.registerMonitor:52)  - Registering JMX me.prettyprint.cassandra.service_Logging:ServiceType=hector,MonitorType=hector
+22 Feb 2013 09:07:27,223 ERROR [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.markHostAsDown:421)  - MARK HOST AS DOWN TRIGGERED for host 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:07:27,224 ERROR [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.markHostAsDown:425)  - Pool state on shutdown: <ConcurrentCassandraClientPoolByHost>:{172.16.89.89(172.16.89.89):9160}; IsActive?: true; Active: 0; Blocked: 0; Idle: 0; NumBeforeExhausted: 2
+22 Feb 2013 09:07:27,224 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.ConcurrentHClientPool.shutdown:163)  - Shutdown triggered on <ConcurrentCassandraClientPoolByHost>:{172.16.89.89(172.16.89.89):9160}
+22 Feb 2013 09:07:27,224 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.ConcurrentHClientPool.shutdown:171)  - Shutdown complete on <ConcurrentCassandraClientPoolByHost>:{172.16.89.89(172.16.89.89):9160}
+22 Feb 2013 09:07:27,224 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.add:68)  - Host detected as down was added to retry queue: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:07:27,225 WARN  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover:306)  - Could not fullfill request on this host null
+22 Feb 2013 09:07:27,225 WARN  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover:307)  - Exception: 
+me.prettyprint.hector.api.exceptions.HectorTransportException: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+	at me.prettyprint.cassandra.connection.client.HThriftClient.open(HThriftClient.java:144)
+	at me.prettyprint.cassandra.connection.client.HThriftClient.open(HThriftClient.java:26)
+	at me.prettyprint.cassandra.connection.ConcurrentHClientPool.createClient(ConcurrentHClientPool.java:147)
+	at me.prettyprint.cassandra.connection.ConcurrentHClientPool.borrowClient(ConcurrentHClientPool.java:79)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:250)
+	at me.prettyprint.cassandra.service.AbstractCluster.describeKeyspaces(AbstractCluster.java:136)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.discoverNodes(NodeAutoDiscoverService.java:97)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.doAddNodes(NodeAutoDiscoverService.java:68)
+	at me.prettyprint.cassandra.connection.HConnectionManager.doAddNodes(HConnectionManager.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster.onStartup(ThriftCluster.java:175)
+	at me.prettyprint.hector.api.factory.HFactory.createCluster(HFactory.java:200)
+	at com.btoddb.flume.sinks.cassandra.CassandraSinkRepository.init(CassandraSinkRepository.java:117)
+	at com.btoddb.flume.sinks.cassandra.CassandraSink.start(CassandraSink.java:115)
+	at org.apache.flume.sink.DefaultSinkProcessor.start(DefaultSinkProcessor.java:46)
+	at org.apache.flume.SinkRunner.start(SinkRunner.java:79)
+	at org.apache.flume.lifecycle.LifecycleSupervisor$MonitorRunnable.run(LifecycleSupervisor.java:251)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:351)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:165)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:267)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:183)
+	at org.apache.thrift.transport.TFramedTransport.open(TFramedTransport.java:81)
+	at me.prettyprint.cassandra.connection.client.HThriftClient.open(HThriftClient.java:138)
+	... 23 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:327)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:193)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:180)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:178)
+	... 25 more
+22 Feb 2013 09:07:27,225 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:07:27,227 ERROR [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.NodeAutoDiscoverService.discoverNodes:119)  - Discovery Service failed attempt to connect CassandraHost
+me.prettyprint.hector.api.exceptions.HectorException: All host pools marked down. Retry burden pushed out to client.
+	at me.prettyprint.cassandra.connection.HConnectionManager.getClientFromLBPolicy(HConnectionManager.java:393)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:249)
+	at me.prettyprint.cassandra.service.AbstractCluster.describeKeyspaces(AbstractCluster.java:136)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.discoverNodes(NodeAutoDiscoverService.java:97)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.doAddNodes(NodeAutoDiscoverService.java:68)
+	at me.prettyprint.cassandra.connection.HConnectionManager.doAddNodes(HConnectionManager.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster.onStartup(ThriftCluster.java:175)
+	at me.prettyprint.hector.api.factory.HFactory.createCluster(HFactory.java:200)
+	at com.btoddb.flume.sinks.cassandra.CassandraSinkRepository.init(CassandraSinkRepository.java:117)
+	at com.btoddb.flume.sinks.cassandra.CassandraSink.start(CassandraSink.java:115)
+	at org.apache.flume.sink.DefaultSinkProcessor.start(DefaultSinkProcessor.java:46)
+	at org.apache.flume.SinkRunner.start(SinkRunner.java:79)
+	at org.apache.flume.lifecycle.LifecycleSupervisor$MonitorRunnable.run(LifecycleSupervisor.java:251)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:351)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:165)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:267)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+22 Feb 2013 09:07:27,228 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:89)  - Monitoried counter group for type: SINK, name: cassandraSink, registered successfully.
+22 Feb 2013 09:07:27,228 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:73)  - Component type: SINK, name: cassandraSink started
+22 Feb 2013 09:07:28,062 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:07:00 IST 2013 to Fri Feb 22 09:07:28 IST 2013
+22 Feb 2013 09:07:28,063 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:07:28,075 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - META_READ.fail_                             84.09    84.07    84.11     0.02    84.11       2
+22 Feb 2013 09:07:28,076 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:07:37,121 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:07:37,122 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:07:37,122 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:07:38,077 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:07:28 IST 2013 to Fri Feb 22 09:07:38 IST 2013
+22 Feb 2013 09:07:38,078 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:07:38,078 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:07:47,122 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:07:47,123 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:07:47,123 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:07:48,079 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:07:38 IST 2013 to Fri Feb 22 09:07:48 IST 2013
+22 Feb 2013 09:07:48,080 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:07:48,080 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:07:57,124 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:07:57,124 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:07:57,125 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:07:58,081 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:07:48 IST 2013 to Fri Feb 22 09:07:58 IST 2013
+22 Feb 2013 09:07:58,082 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:07:58,082 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:08:07,125 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:08:07,126 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:08:07,126 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:08:08,083 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:07:58 IST 2013 to Fri Feb 22 09:08:08 IST 2013
+22 Feb 2013 09:08:08,084 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:08:08,084 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:08:17,126 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:08:17,127 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:08:17,127 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:08:18,085 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:08:08 IST 2013 to Fri Feb 22 09:08:18 IST 2013
+22 Feb 2013 09:08:18,086 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:08:18,086 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:08:27,128 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:08:27,128 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:08:27,128 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:08:28,087 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:08:18 IST 2013 to Fri Feb 22 09:08:28 IST 2013
+22 Feb 2013 09:08:28,088 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:08:28,088 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:08:37,129 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:08:37,129 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:08:37,130 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:08:38,089 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:08:28 IST 2013 to Fri Feb 22 09:08:38 IST 2013
+22 Feb 2013 09:08:38,090 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:08:38,090 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:08:47,130 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:08:47,131 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:08:47,131 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:08:48,092 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:08:38 IST 2013 to Fri Feb 22 09:08:48 IST 2013
+22 Feb 2013 09:08:48,092 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:08:48,092 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:08:57,131 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:08:57,131 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:08:57,132 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:08:58,094 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:08:48 IST 2013 to Fri Feb 22 09:08:58 IST 2013
+22 Feb 2013 09:08:58,094 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:08:58,094 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:09:07,132 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:09:07,133 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:09:07,133 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:09:08,095 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:08:58 IST 2013 to Fri Feb 22 09:09:08 IST 2013
+22 Feb 2013 09:09:08,096 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:09:08,096 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:09:17,133 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:09:17,134 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:09:17,134 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:09:18,097 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:09:08 IST 2013 to Fri Feb 22 09:09:18 IST 2013
+22 Feb 2013 09:09:18,098 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:09:18,098 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:09:27,135 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:09:27,135 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:09:27,135 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:09:28,099 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:09:18 IST 2013 to Fri Feb 22 09:09:28 IST 2013
+22 Feb 2013 09:09:28,099 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:09:28,100 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:09:37,136 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:09:37,136 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:09:37,137 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:09:38,101 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:09:28 IST 2013 to Fri Feb 22 09:09:38 IST 2013
+22 Feb 2013 09:09:38,102 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:09:38,102 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:09:47,137 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:09:47,137 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:09:47,138 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:09:48,103 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:09:38 IST 2013 to Fri Feb 22 09:09:48 IST 2013
+22 Feb 2013 09:09:48,103 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:09:48,104 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:09:57,138 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:09:57,138 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:09:57,139 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:09:58,105 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:09:48 IST 2013 to Fri Feb 22 09:09:58 IST 2013
+22 Feb 2013 09:09:58,106 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:09:58,106 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:10:07,139 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:10:07,140 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:10:07,140 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:10:08,107 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:09:58 IST 2013 to Fri Feb 22 09:10:08 IST 2013
+22 Feb 2013 09:10:08,108 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:10:08,108 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:10:17,140 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:10:17,141 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:10:17,141 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:10:18,109 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:10:08 IST 2013 to Fri Feb 22 09:10:18 IST 2013
+22 Feb 2013 09:10:18,110 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:10:18,110 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:10:27,142 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:10:27,142 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:10:27,142 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:10:28,111 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:10:18 IST 2013 to Fri Feb 22 09:10:28 IST 2013
+22 Feb 2013 09:10:28,111 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:10:28,112 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:10:37,143 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:10:37,143 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:10:37,144 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:10:38,113 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:10:28 IST 2013 to Fri Feb 22 09:10:38 IST 2013
+22 Feb 2013 09:10:38,114 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:10:38,114 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:10:47,144 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:10:47,145 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:10:47,145 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:10:48,115 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:10:38 IST 2013 to Fri Feb 22 09:10:48 IST 2013
+22 Feb 2013 09:10:48,116 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:10:48,116 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:10:57,145 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:10:57,146 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:10:57,146 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:10:58,117 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:10:48 IST 2013 to Fri Feb 22 09:10:58 IST 2013
+22 Feb 2013 09:10:58,118 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:10:58,118 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:11:07,147 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:11:07,147 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:11:07,147 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:11:08,119 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:10:58 IST 2013 to Fri Feb 22 09:11:08 IST 2013
+22 Feb 2013 09:11:08,120 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:11:08,120 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:11:17,148 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:11:17,149 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:11:17,149 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:11:18,121 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:11:08 IST 2013 to Fri Feb 22 09:11:18 IST 2013
+22 Feb 2013 09:11:18,121 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:11:18,122 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:11:26,751 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:79)  - Stopping lifecycle supervisor 10
+22 Feb 2013 09:11:26,752 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:11:18 IST 2013 to Fri Feb 22 09:11:26 IST 2013
+22 Feb 2013 09:11:26,752 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:11:26,753 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:11:26,754 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:100)  - Component type: CHANNEL, name: memoryChannel stopped
+22 Feb 2013 09:11:26,754 INFO  [agent-shutdown-hook] (org.apache.flume.node.PollingPropertiesFileConfigurationProvider.stop:83)  - Configuration provider stopping
+22 Feb 2013 09:11:26,755 INFO  [agent-shutdown-hook] (org.apache.flume.source.SyslogTcpSource.stop:125)  - Syslog TCP Source stopping...
+22 Feb 2013 09:11:26,755 INFO  [agent-shutdown-hook] (org.apache.flume.source.SyslogTcpSource.stop:126)  - Metrics:{ name:null counters:{} }
+22 Feb 2013 09:11:26,756 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:100)  - Component type: SINK, name: cassandraSink stopped
+22 Feb 2013 09:15:36,793 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.node.PollingPropertiesFileConfigurationProvider.start:61)  - Configuration provider starting
+22 Feb 2013 09:15:36,801 INFO  [conf-file-poller-0] (org.apache.flume.node.PollingPropertiesFileConfigurationProvider$FileWatcherRunnable.run:133)  - Reloading configuration file:../conf/syslogtcp.conf
+22 Feb 2013 09:15:36,807 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:930)  - Added sinks: cassandraSink Agent: agent
+22 Feb 2013 09:15:36,808 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1016)  - Processing:cassandraSink
+22 Feb 2013 09:15:36,808 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1016)  - Processing:cassandraSink
+22 Feb 2013 09:15:36,808 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1016)  - Processing:cassandraSink
+22 Feb 2013 09:15:36,816 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration.validateConfiguration:140)  - Post-validation flume configuration contains configuration for agents: [agent]
+22 Feb 2013 09:15:36,816 INFO  [conf-file-poller-0] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:150)  - Creating channels
+22 Feb 2013 09:15:36,822 INFO  [conf-file-poller-0] (org.apache.flume.channel.DefaultChannelFactory.create:40)  - Creating instance of channel memoryChannel type memory
+22 Feb 2013 09:15:36,825 INFO  [conf-file-poller-0] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:205)  - Created channel memoryChannel
+22 Feb 2013 09:15:36,826 INFO  [conf-file-poller-0] (org.apache.flume.source.DefaultSourceFactory.create:39)  - Creating instance of source seqGenSrc, type org.apache.flume.source.SyslogTcpSource
+22 Feb 2013 09:15:36,844 INFO  [conf-file-poller-0] (org.apache.flume.interceptor.StaticInterceptor$Builder.build:133)  - Creating StaticInterceptor: preserveExisting=true,key=key,value=key
+22 Feb 2013 09:15:36,849 INFO  [conf-file-poller-0] (org.apache.flume.sink.DefaultSinkFactory.create:40)  - Creating instance of sink: cassandraSink, type: com.btoddb.flume.sinks.cassandra.CassandraSink
+22 Feb 2013 09:15:36,890 INFO  [conf-file-poller-0] (org.apache.flume.node.AbstractConfigurationProvider.getConfiguration:119)  - Channel memoryChannel connected to [seqGenSrc, cassandraSink]
+22 Feb 2013 09:15:36,894 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:138)  - Starting new configuration:{ sourceRunners:{seqGenSrc=EventDrivenSourceRunner: { source:org.apache.flume.source.SyslogTcpSource{name:seqGenSrc,state:IDLE} }} sinkRunners:{cassandraSink=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@1c6572b counterGroup:{ name:null counters:{} } }} channels:{memoryChannel=org.apache.flume.channel.MemoryChannel{name: memoryChannel}} }
+22 Feb 2013 09:15:36,894 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:145)  - Starting Channel memoryChannel
+22 Feb 2013 09:15:36,896 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:89)  - Monitoried counter group for type: CHANNEL, name: memoryChannel, registered successfully.
+22 Feb 2013 09:15:36,897 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:73)  - Component type: CHANNEL, name: memoryChannel started
+22 Feb 2013 09:15:36,897 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:173)  - Starting Sink cassandraSink
+22 Feb 2013 09:15:36,897 INFO  [conf-file-poller-0] (org.apache.flume.node.Application.startAllComponents:184)  - Starting Source seqGenSrc
+22 Feb 2013 09:15:36,979 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.<init>:48)  - Downed Host Retry service started with queue size -1 and retry delay 10s
+22 Feb 2013 09:15:36,981 INFO  [lifecycleSupervisor-1-2] (org.apache.flume.source.SyslogTcpSource.start:112)  - Syslog TCP Source starting...
+22 Feb 2013 09:15:36,981 INFO  [lifecycleSupervisor-1-2] (org.apache.flume.source.SyslogTcpSource.start:113)  - 1234567hello worldklshfklashfkahfkhafkh
+
+22 Feb 2013 09:15:36,988 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.service.JmxMonitor.registerMonitor:52)  - Registering JMX me.prettyprint.cassandra.service_Logging:ServiceType=hector,MonitorType=hector
+22 Feb 2013 09:15:37,009 ERROR [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.markHostAsDown:421)  - MARK HOST AS DOWN TRIGGERED for host 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:15:37,010 ERROR [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.markHostAsDown:425)  - Pool state on shutdown: <ConcurrentCassandraClientPoolByHost>:{172.16.89.89(172.16.89.89):9160}; IsActive?: true; Active: 0; Blocked: 0; Idle: 0; NumBeforeExhausted: 2
+22 Feb 2013 09:15:37,010 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.ConcurrentHClientPool.shutdown:163)  - Shutdown triggered on <ConcurrentCassandraClientPoolByHost>:{172.16.89.89(172.16.89.89):9160}
+22 Feb 2013 09:15:37,010 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.ConcurrentHClientPool.shutdown:171)  - Shutdown complete on <ConcurrentCassandraClientPoolByHost>:{172.16.89.89(172.16.89.89):9160}
+22 Feb 2013 09:15:37,010 INFO  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.add:68)  - Host detected as down was added to retry queue: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:15:37,011 WARN  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover:306)  - Could not fullfill request on this host null
+22 Feb 2013 09:15:37,011 WARN  [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover:307)  - Exception: 
+me.prettyprint.hector.api.exceptions.HectorTransportException: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+	at me.prettyprint.cassandra.connection.client.HThriftClient.open(HThriftClient.java:144)
+	at me.prettyprint.cassandra.connection.client.HThriftClient.open(HThriftClient.java:26)
+	at me.prettyprint.cassandra.connection.ConcurrentHClientPool.createClient(ConcurrentHClientPool.java:147)
+	at me.prettyprint.cassandra.connection.ConcurrentHClientPool.borrowClient(ConcurrentHClientPool.java:79)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:250)
+	at me.prettyprint.cassandra.service.AbstractCluster.describeKeyspaces(AbstractCluster.java:136)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.discoverNodes(NodeAutoDiscoverService.java:97)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.doAddNodes(NodeAutoDiscoverService.java:68)
+	at me.prettyprint.cassandra.connection.HConnectionManager.doAddNodes(HConnectionManager.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster.onStartup(ThriftCluster.java:175)
+	at me.prettyprint.hector.api.factory.HFactory.createCluster(HFactory.java:200)
+	at com.btoddb.flume.sinks.cassandra.CassandraSinkRepository.init(CassandraSinkRepository.java:117)
+	at com.btoddb.flume.sinks.cassandra.CassandraSink.start(CassandraSink.java:115)
+	at org.apache.flume.sink.DefaultSinkProcessor.start(DefaultSinkProcessor.java:46)
+	at org.apache.flume.SinkRunner.start(SinkRunner.java:79)
+	at org.apache.flume.lifecycle.LifecycleSupervisor$MonitorRunnable.run(LifecycleSupervisor.java:251)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:351)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:165)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:267)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:183)
+	at org.apache.thrift.transport.TFramedTransport.open(TFramedTransport.java:81)
+	at me.prettyprint.cassandra.connection.client.HThriftClient.open(HThriftClient.java:138)
+	... 23 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:327)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:193)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:180)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:178)
+	... 25 more
+22 Feb 2013 09:15:37,015 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:15:37,016 ERROR [lifecycleSupervisor-1-1] (me.prettyprint.cassandra.connection.NodeAutoDiscoverService.discoverNodes:119)  - Discovery Service failed attempt to connect CassandraHost
+me.prettyprint.hector.api.exceptions.HectorException: All host pools marked down. Retry burden pushed out to client.
+	at me.prettyprint.cassandra.connection.HConnectionManager.getClientFromLBPolicy(HConnectionManager.java:393)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:249)
+	at me.prettyprint.cassandra.service.AbstractCluster.describeKeyspaces(AbstractCluster.java:136)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.discoverNodes(NodeAutoDiscoverService.java:97)
+	at me.prettyprint.cassandra.connection.NodeAutoDiscoverService.doAddNodes(NodeAutoDiscoverService.java:68)
+	at me.prettyprint.cassandra.connection.HConnectionManager.doAddNodes(HConnectionManager.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster.onStartup(ThriftCluster.java:175)
+	at me.prettyprint.hector.api.factory.HFactory.createCluster(HFactory.java:200)
+	at com.btoddb.flume.sinks.cassandra.CassandraSinkRepository.init(CassandraSinkRepository.java:117)
+	at com.btoddb.flume.sinks.cassandra.CassandraSink.start(CassandraSink.java:115)
+	at org.apache.flume.sink.DefaultSinkProcessor.start(DefaultSinkProcessor.java:46)
+	at org.apache.flume.SinkRunner.start(SinkRunner.java:79)
+	at org.apache.flume.lifecycle.LifecycleSupervisor$MonitorRunnable.run(LifecycleSupervisor.java:251)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:351)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:165)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:267)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+22 Feb 2013 09:15:37,017 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:89)  - Monitoried counter group for type: SINK, name: cassandraSink, registered successfully.
+22 Feb 2013 09:15:37,017 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:73)  - Component type: SINK, name: cassandraSink started
+22 Feb 2013 09:15:40,954 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:15:30 IST 2013 to Fri Feb 22 09:15:40 IST 2013
+22 Feb 2013 09:15:40,954 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:15:40,957 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - META_READ.fail_                             19.20    19.18    19.22     0.02    19.22       2
+22 Feb 2013 09:15:40,957 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:15:44,771 ERROR [pool-3-thread-1] (com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run:30)  - exception while executing mutator
+me.prettyprint.hector.api.exceptions.HectorException: All host pools marked down. Retry burden pushed out to client.
+	at me.prettyprint.cassandra.connection.HConnectionManager.getClientFromLBPolicy(HConnectionManager.java:393)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:249)
+	at me.prettyprint.cassandra.model.ExecutingKeyspace.doExecuteOperation(ExecutingKeyspace.java:97)
+	at me.prettyprint.cassandra.model.MutatorImpl.execute(MutatorImpl.java:243)
+	at com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run(CassandraWriteWork.java:27)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+22 Feb 2013 09:15:46,979 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:15:46,980 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:15:46,980 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:15:50,958 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:15:40 IST 2013 to Fri Feb 22 09:15:50 IST 2013
+22 Feb 2013 09:15:50,959 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:15:50,959 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - WRITE.fail_                                  0.04     0.04     0.04     0.00     0.04       1
+22 Feb 2013 09:15:50,960 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:15:54,182 ERROR [pool-3-thread-2] (com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run:30)  - exception while executing mutator
+me.prettyprint.hector.api.exceptions.HectorException: All host pools marked down. Retry burden pushed out to client.
+	at me.prettyprint.cassandra.connection.HConnectionManager.getClientFromLBPolicy(HConnectionManager.java:393)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:249)
+	at me.prettyprint.cassandra.model.ExecutingKeyspace.doExecuteOperation(ExecutingKeyspace.java:97)
+	at me.prettyprint.cassandra.model.MutatorImpl.execute(MutatorImpl.java:243)
+	at com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run(CassandraWriteWork.java:27)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+22 Feb 2013 09:15:56,980 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:15:56,981 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:15:56,981 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:16:00,961 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:15:50 IST 2013 to Fri Feb 22 09:16:00 IST 2013
+22 Feb 2013 09:16:00,961 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:16:00,962 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - WRITE.fail_                                  0.05     0.05     0.05     0.00     0.05       1
+22 Feb 2013 09:16:00,962 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:16:06,186 ERROR [pool-3-thread-3] (com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run:30)  - exception while executing mutator
+me.prettyprint.hector.api.exceptions.HectorException: All host pools marked down. Retry burden pushed out to client.
+	at me.prettyprint.cassandra.connection.HConnectionManager.getClientFromLBPolicy(HConnectionManager.java:393)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:249)
+	at me.prettyprint.cassandra.model.ExecutingKeyspace.doExecuteOperation(ExecutingKeyspace.java:97)
+	at me.prettyprint.cassandra.model.MutatorImpl.execute(MutatorImpl.java:243)
+	at com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run(CassandraWriteWork.java:27)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+22 Feb 2013 09:16:06,982 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:16:06,982 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:16:06,983 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:16:10,964 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:16:00 IST 2013 to Fri Feb 22 09:16:10 IST 2013
+22 Feb 2013 09:16:10,964 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:16:10,965 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - WRITE.fail_                                  0.04     0.04     0.04     0.00     0.04       1
+22 Feb 2013 09:16:10,965 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:16:16,983 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:16:16,984 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:16:16,984 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:16:20,967 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:16:10 IST 2013 to Fri Feb 22 09:16:20 IST 2013
+22 Feb 2013 09:16:20,967 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:16:20,967 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:16:26,984 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:16:26,985 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:16:26,985 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:16:30,969 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:16:20 IST 2013 to Fri Feb 22 09:16:30 IST 2013
+22 Feb 2013 09:16:30,969 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:16:30,969 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:16:36,986 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:16:36,986 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:16:36,986 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:16:40,971 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:16:30 IST 2013 to Fri Feb 22 09:16:40 IST 2013
+22 Feb 2013 09:16:40,971 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:16:40,971 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:16:46,987 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:16:46,988 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:16:46,988 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:16:50,973 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:16:40 IST 2013 to Fri Feb 22 09:16:50 IST 2013
+22 Feb 2013 09:16:50,973 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:16:50,973 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:16:56,988 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:16:56,989 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:16:56,989 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:17:00,974 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:16:50 IST 2013 to Fri Feb 22 09:17:00 IST 2013
+22 Feb 2013 09:17:00,975 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:17:00,975 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:17:04,082 ERROR [pool-3-thread-4] (com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run:30)  - exception while executing mutator
+me.prettyprint.hector.api.exceptions.HectorException: All host pools marked down. Retry burden pushed out to client.
+	at me.prettyprint.cassandra.connection.HConnectionManager.getClientFromLBPolicy(HConnectionManager.java:393)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:249)
+	at me.prettyprint.cassandra.model.ExecutingKeyspace.doExecuteOperation(ExecutingKeyspace.java:97)
+	at me.prettyprint.cassandra.model.MutatorImpl.execute(MutatorImpl.java:243)
+	at com.btoddb.flume.sinks.cassandra.CassandraWriteWork.run(CassandraWriteWork.java:27)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+22 Feb 2013 09:17:06,989 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:17:06,990 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:17:06,990 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:17:10,976 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:17:00 IST 2013 to Fri Feb 22 09:17:10 IST 2013
+22 Feb 2013 09:17:10,977 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:17:10,977 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - WRITE.fail_                                  0.04     0.04     0.04     0.00     0.04       1
+22 Feb 2013 09:17:10,978 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:17:16,991 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:17:16,992 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:17:16,992 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:17:20,979 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:17:10 IST 2013 to Fri Feb 22 09:17:20 IST 2013
+22 Feb 2013 09:17:20,979 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:17:20,979 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:17:26,992 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:17:26,993 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:17:26,993 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:17:30,981 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:17:20 IST 2013 to Fri Feb 22 09:17:30 IST 2013
+22 Feb 2013 09:17:30,981 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:17:30,982 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:17:36,993 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:17:36,994 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:17:36,994 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:17:40,983 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:17:30 IST 2013 to Fri Feb 22 09:17:40 IST 2013
+22 Feb 2013 09:17:40,983 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:17:40,984 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:17:46,995 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:17:46,995 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:17:46,996 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:17:50,985 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:17:40 IST 2013 to Fri Feb 22 09:17:50 IST 2013
+22 Feb 2013 09:17:50,985 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:17:50,986 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:17:56,996 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:17:56,997 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:17:56,997 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:18:00,987 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:17:50 IST 2013 to Fri Feb 22 09:18:00 IST 2013
+22 Feb 2013 09:18:00,987 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:18:00,988 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:18:06,997 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:18:06,998 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:18:06,998 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:18:10,989 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:18:00 IST 2013 to Fri Feb 22 09:18:10 IST 2013
+22 Feb 2013 09:18:10,989 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:18:10,990 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:18:16,999 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:18:16,999 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:18:17,000 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:18:20,991 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:18:10 IST 2013 to Fri Feb 22 09:18:20 IST 2013
+22 Feb 2013 09:18:20,991 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:18:20,991 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:18:27,000 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:18:27,001 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:18:27,001 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:18:30,993 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:18:20 IST 2013 to Fri Feb 22 09:18:30 IST 2013
+22 Feb 2013 09:18:30,993 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:18:30,993 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:18:37,001 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:18:37,002 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:18:37,002 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:18:40,995 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:18:30 IST 2013 to Fri Feb 22 09:18:40 IST 2013
+22 Feb 2013 09:18:40,995 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:18:40,995 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:18:47,002 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:18:47,003 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:18:47,003 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:18:50,997 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:18:40 IST 2013 to Fri Feb 22 09:18:50 IST 2013
+22 Feb 2013 09:18:50,997 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:18:50,997 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:18:57,004 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:18:57,005 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:18:57,005 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:19:00,999 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:18:50 IST 2013 to Fri Feb 22 09:19:00 IST 2013
+22 Feb 2013 09:19:00,999 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:19:00,999 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:19:07,005 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:19:07,006 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:19:07,006 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:19:11,001 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:19:00 IST 2013 to Fri Feb 22 09:19:11 IST 2013
+22 Feb 2013 09:19:11,001 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:19:11,001 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:19:17,006 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:19:17,007 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:19:17,007 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:19:21,003 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:19:11 IST 2013 to Fri Feb 22 09:19:21 IST 2013
+22 Feb 2013 09:19:21,003 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:19:21,003 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:19:27,007 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:19:27,008 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:19:27,008 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:19:31,004 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:19:21 IST 2013 to Fri Feb 22 09:19:31 IST 2013
+22 Feb 2013 09:19:31,005 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:19:31,005 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:19:37,009 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:19:37,009 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:19:37,010 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:19:41,006 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:19:31 IST 2013 to Fri Feb 22 09:19:41 IST 2013
+22 Feb 2013 09:19:41,007 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:19:41,007 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:19:47,010 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:19:47,011 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:19:47,011 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:19:51,008 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:19:41 IST 2013 to Fri Feb 22 09:19:51 IST 2013
+22 Feb 2013 09:19:51,009 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:19:51,009 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:19:57,011 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:19:57,012 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:19:57,012 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:20:01,010 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:19:51 IST 2013 to Fri Feb 22 09:20:01 IST 2013
+22 Feb 2013 09:20:01,011 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:20:01,011 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:20:07,013 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:146)  - Not checking that 172.16.89.89(172.16.89.89):9160 is a member of the ring since there are no live hosts
+22 Feb 2013 09:20:07,013 WARN  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService.verifyConnection:213)  - Downed 172.16.89.89(172.16.89.89):9160 host still appears to be down: Unable to open transport to 172.16.89.89(172.16.89.89):9160 , java.net.ConnectException: Connection refused
+22 Feb 2013 09:20:07,014 INFO  [Hector.me.prettyprint.cassandra.connection.CassandraHostRetryService-1] (me.prettyprint.cassandra.connection.CassandraHostRetryService$RetryRunner.retryDownedHosts:159)  - Downed Host retry status false with host: 172.16.89.89(172.16.89.89):9160
+22 Feb 2013 09:20:08,828 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:79)  - Stopping lifecycle supervisor 10
+22 Feb 2013 09:20:08,828 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Statistics from Fri Feb 22 09:20:01 IST 2013 to Fri Feb 22 09:20:08 IST 2013
+22 Feb 2013 09:20:08,828 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - Tag                                       Avg(ms)      Min      Max  Std Dev     95th   Count
+22 Feb 2013 09:20:08,829 INFO  [Speed4J PeriodicalLog Collector Thread] (com.ecyrd.speed4j.log.PeriodicalLog.printf:267)  - 
+22 Feb 2013 09:20:08,830 INFO  [agent-shutdown-hook] (org.apache.flume.source.SyslogTcpSource.stop:125)  - Syslog TCP Source stopping...
+22 Feb 2013 09:20:08,830 INFO  [agent-shutdown-hook] (org.apache.flume.source.SyslogTcpSource.stop:126)  - Metrics:{ name:null counters:{events.success=48} }
+22 Feb 2013 09:20:08,831 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:100)  - Component type: SINK, name: cassandraSink stopped
+22 Feb 2013 09:20:08,832 INFO  [agent-shutdown-hook] (org.apache.flume.node.PollingPropertiesFileConfigurationProvider.stop:83)  - Configuration provider stopping
+22 Feb 2013 09:20:08,832 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:100)  - Component type: CHANNEL, name: memoryChannel stopped
